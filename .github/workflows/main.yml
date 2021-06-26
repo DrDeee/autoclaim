@@ -13,5 +13,5 @@ jobs:
           url: 'https://discord.com/api/v9/channels/559438032655089674/messages'
           method: 'POST'
           data: '{"content": "l.daily"}'
-          costumHeaders: '{"Authorization": "${{ secrets.TOKEN }}"}'
+          customHeaders: '{"Authorization": "${{ secrets.TOKEN }}"}'
 
