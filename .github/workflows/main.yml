@@ -1,0 +1,17 @@
+name: Automatic Daily Claimer
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 12 * * *'
+jobs:
+  claim:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send claim message
+        uses: fjogeleit/http-request-action@master
+        with:
+          url: 'https://discord.com/api/v9/channels/559438032655089674/messages'
+          method: 'POST'
+          data: '{"content": "l.daily"}'
+          costumHeaders: '{"Authorization": "${{ secrets.TOKEN }}"}'
+
