@@ -10,8 +10,8 @@ jobs:
       - name: Send claim message
         uses: fjogeleit/http-request-action@master
         with:
-          url: 'https://discord.com/api/v9/channels/559438032655089674/messages'
+          url: 'https://discord.com/api/v9/channels/${{ secrets.CHANNEL }}/messages'
           method: 'POST'
-          data: '{"content": "l.daily"}'
+          data: '{"content": "${{ secrets.MESSAGE }}"}'
           customHeaders: '{"Authorization": "${{ secrets.TOKEN }}"}'
 
